@@ -1,21 +1,35 @@
-.box {
-    border: 1px solid black;
-    width: 700px;
-    margin: 0 auto;
-    border-radius: 10px;
-    height: 300px;
-    background-color: rgb(80, 76, 76);
-    color: white;
-}
 h1{
     text-align: center;
 }
-img{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    float: left;
-}
-.box2{
-    float: left;
-    margin-left: 10px;
-}
+.box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(80, 76, 76);
+    color: white;
+    height: 500px;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 5px 0;
+  }

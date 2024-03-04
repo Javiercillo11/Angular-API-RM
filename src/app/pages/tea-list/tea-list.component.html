@@ -1,13 +1,15 @@
 <h1>The Rick and Morty API</h1>
 <div class="box">
-    <div *ngFor="let item of data">
-      <img src="{{item.image}}" alt="">
+  <div *ngFor="let item of data">
+    <div class="card">
+      <img src="{{ item.image }}" alt="{{ item.name }}">
       <div class="box2">
-      <h2>{{item.name}}</h2>
-      <p>{{item.status}} - {{item.species}}</p>
-      <br>
-      <p>Last known location: </p><p>{{item.origin.name}}</p>
-      <p>First seen in: </p><p>The Old Man and the Seat</p>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.status }} - {{ item.species }}</p>
+        <br>
+        <p>Last known location: {{ item.origin.name }}</p><br>
+        <p>First seen in: The Old Man and the Seat</p>
+      </div>
     </div>
-    </div>
+  </div>
 </div>
