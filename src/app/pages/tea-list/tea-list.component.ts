@@ -9,9 +9,11 @@ import { ApiResponse } from 'src/app/data/user-info.service';
 })
 export class TeaListComponent implements OnInit{
   data: any[] = [];
+  filteredData: any[] = [];
   pageSizeOptions: number[] = [5, 10, 20];
   pageSize = 5;
   pageIndex = 0;
+  searchTerm: string = '';
 
   constructor(private apiService: UserInfoService) {}
 
@@ -19,22 +21,27 @@ export class TeaListComponent implements OnInit{
     this.cargarData();
   }
 
-  public cargarData() {
+  cargarData(): void {
     this.apiService.getData().subscribe((data: any[]) => {
       this.data = data;
-      console.log(data);
+      this.filteredData = data;
     });
   }
 
   getPaginatedData(): any[] {
     const startIndex = this.pageIndex * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    return this.data.slice(startIndex, endIndex);
+    return this.filteredData.slice(startIndex, endIndex);
   }
 
   onPageChange(event: any): void {
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
+  }
+
+  filterData(): void {
+    this.filteredData = this.data.filter(item => item.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.pageIndex = 0;
   }
 
   getStatusColor(status: string): string {
@@ -49,6 +56,5 @@ export class TeaListComponent implements OnInit{
         return 'black';
     }
   }
-
 
 }

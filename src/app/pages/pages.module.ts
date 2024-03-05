@@ -5,6 +5,10 @@ import { TeaListComponent } from './tea-list/tea-list.component';
 import { TeaDetailComponent } from './tea-detail/tea-detail.component';
 import { authGuard } from '../guards/auth.guard';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: 'tea-list', component: TeaListComponent,},
@@ -19,7 +23,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

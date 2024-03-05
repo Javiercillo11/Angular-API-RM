@@ -1,4 +1,13 @@
 <h1>The Rick and Morty API</h1>
+
+<mat-form-field class="form-field">
+  <mat-label>Buscar Personaje</mat-label>
+  <input matInput type="text" [(ngModel)]="searchTerm" (input)="filterData()">
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="filterData()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+
 <div class="box">
   <div *ngFor="let item of getPaginatedData(); let i = index">
     <div class="card">
@@ -14,6 +23,7 @@
     </div>
   </div>
 </div>
+<br>
 <mat-paginator
   class="pag"
   [length]="data.length"
