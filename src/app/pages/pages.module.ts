@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
   {path: 'tea-list', component: TeaListComponent,},
@@ -27,7 +29,9 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatFormFieldModule,
   ]
 })
 export class PagesModule { }

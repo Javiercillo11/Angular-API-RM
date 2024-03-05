@@ -8,6 +8,22 @@
   </button>
 </mat-form-field>
 
+<button class="filter" mat-raised-button [matMenuTriggerFor]="statusMenu">Filtrar por Status</button>
+<mat-menu #statusMenu="matMenu">
+  <button mat-menu-item (click)="filterByStatus('Todos')">Todos</button>
+  <button mat-menu-item (click)="filterByStatus('Alive')">Alive</button>
+  <button mat-menu-item (click)="filterByStatus('Dead')">Dead</button>
+  <button mat-menu-item (click)="filterByStatus('unknown')">Unknown</button>
+</mat-menu>
+
+<button class="filter2" mat-raised-button [matMenuTriggerFor]="typeMenu">Filtrar por Tipo</button>
+<mat-menu #typeMenu="matMenu">
+  <button mat-menu-item (click)="filterByType('Todos')">Todos</button>
+  <button mat-menu-item (click)="filterByType('Human')">Human</button>
+  <button mat-menu-item (click)="filterByType('Alien')">Alien</button>
+  <button mat-menu-item (click)="filterByType('Humanoid')">Humanoid</button>
+</mat-menu>
+
 <div class="box">
   <div *ngFor="let item of getPaginatedData(); let i = index">
     <div class="card">
