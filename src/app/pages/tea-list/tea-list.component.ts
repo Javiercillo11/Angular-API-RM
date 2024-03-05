@@ -35,7 +35,19 @@ export class TeaListComponent implements OnInit{
   onPageChange(event: any): void {
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
-    // Puedes recargar los datos según sea necesario
+  }
+
+  getStatusColor(status: string): string {
+    switch (status) {
+      case 'Alive':
+        return 'green';
+      case 'Dead':
+        return 'red';
+      case 'unknown':
+        return 'grey';
+      default:
+        return 'black';
+    }
   }
 
 

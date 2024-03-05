@@ -3,13 +3,14 @@
   <div *ngFor="let item of getPaginatedData(); let i = index">
     <div class="card">
       <img src="{{ item.image }}" alt="{{ item.name }}">
-      <div class="box2">
         <h2>{{ item.name }}</h2>
+        <div class="box2">
+        <div class="status-dot" [ngStyle]="{'background-color': getStatusColor(item.status)}"></div>
         <p>{{ item.status }} - {{ item.species }}</p>
+      </div>
         <br>
         <p>Last known location: {{ item.origin.name }}</p><br>
         <p>First seen in: The Old Man and the Seat</p>
-      </div>
     </div>
   </div>
 </div>
