@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TeaListComponent } from './tea-list/tea-list.component';
 import { TeaDetailComponent } from './tea-detail/tea-detail.component';
 import { authGuard } from '../guards/auth.guard';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [
   {path: 'tea-list', component: TeaListComponent,},
@@ -12,10 +13,13 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TeaListComponent
+  ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatPaginatorModule
   ]
 })
 export class PagesModule { }

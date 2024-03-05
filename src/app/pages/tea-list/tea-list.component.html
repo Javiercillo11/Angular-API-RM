@@ -1,6 +1,6 @@
 <h1>The Rick and Morty API</h1>
 <div class="box">
-  <div *ngFor="let item of data">
+  <div *ngFor="let item of getPaginatedData(); let i = index">
     <div class="card">
       <img src="{{ item.image }}" alt="{{ item.name }}">
       <div class="box2">
@@ -13,3 +13,12 @@
     </div>
   </div>
 </div>
+<mat-paginator
+  class="pag"
+  [length]="data.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageIndex]="pageIndex"
+  (page)="onPageChange($event)"
+  aria-label="Select page"
+></mat-paginator>
